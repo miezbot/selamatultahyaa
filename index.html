@@ -19,32 +19,38 @@
   <title>Happy Birthday</title>
   <link rel="icon" type="image/x-icon" href="https://malasid.github.io/favicon.png">
   <meta name="description" content="HTML Bucin Malas.id">
-
+  <!-- 
+  Made with love by Rayys!
+  
+     Blog: https://PalingIT.com
+     Instagram: @rayyarrr
+     TikTok: @rayy4r
+     Email: rayyar0703@gmail.com
+     
+  Thanks to all <3
+-->
 </head>
 
 <body>
 
-  <audio loop id="linkmp3" class="sembunyi">
-    <source
-      src="https://cdn.discordapp.com/attachments/1200800503811022881/1201098647320924170/youtube_C91MSsixCFA_audio.mp3"
-      type="audio/mp3">
-    Maaf, browser Anda tidak mendukung elemen audio.
-  </audio>
-
+  <!-- Ganti Audio di sini -->
+  <!-- <audio src="https://feeldreams.github.io/djikhlas.mp3" id="linkmp3" class="sembunyi"></audio> -->
+  <audio
+    src="https://cdn.discordapp.com/attachments/1200800503811022881/1201098647320924170/youtube_C91MSsixCFA_audio.mp3"
+    id="linkmp3" class="sembunyi"></audio>
 
   <div id="bodyblur">
-    <img
-      src="https://media.discordapp.net/attachments/1200800503811022881/1201104656542216213/Purple_and_White_Happy_Birth_Day_Bestie.png?ex=65c89ae1&is=65b625e1&hm=f23ec65ec9491441567417c8&=&format=webp&quality=lossless&width=342&height=610"
-      id="wallpaper" />
+    <!-- Wallpaper -->
+    <img src="https://feeldreams.github.io/wp9.jpg" id="wallpaper" />
     <div id="beneranblur"></div>
   </div>
 
   <div id='Content'>
 
     <div id="kadoIn">
-      <img src="https://feeldreams.github.io/kadoin.png" />
+      <!-- Tombol Surat --><img src="https://feeldreams.github.io/kadoin.png" />
     </div>
-    <p id="ket">KLIK KADONYA YA!</p>
+    <p id="ket">Klik Kadonya!</p>
 
     <div class="kumpulanstiker">
       <!-- Stiker untuk Konten -->
@@ -62,9 +68,9 @@
 
     <div>
       <blockquote id='bq' data-text='㋡'>
-        <p id="kalimat">AKU ADA SESUATU NIH 🤣❤️</p>
+        <p id="kalimat">Aku Ada Sesuatu Nih 🤣❤️</p>
 
-        <p id="pesan1">COBA KAMU PENCET LOVE DIBAWAH! 😆❤️</p>
+        <p id="pesan1">Klik 4 LOVE di Bawah! 😆❤️</p>
         <div id="kolombaru">
           <li id="lv1">🤍</li>
           <li id="lv2">🤍</li>
@@ -99,7 +105,7 @@
     <!-- Pesan Ditolak -->
     <div id="pesanditolak">
       <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif" />
-      <p id="kataditolak">Yaudah kalo gamau hehe 😜</p>
+      <p id="kataditolak">Yaudah kalo gamau mh 😜</p>
     </div>
 
   </div>
@@ -108,6 +114,12 @@
     const body = document.querySelector("body"); const swalst = Swal.mixin({ timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90, }); audio = new Audio('' + linkmp3.src); ftganti = 0; fungsi = 0; fungsiAwal = 0; deffotostiker = fotostiker.src; function berjatuhan() { const heart = document.createElement("div"); heart.className = "fas fa-snowflake"; heart.style.left = (Math.random() * 90) + "vw"; heart.style.animationDuration = (Math.random() * 3) + 2 + "s"; body.appendChild(heart); } setInterval(function name(params) { var heartArr = document.querySelectorAll(".fa-snowflake"); if (heartArr.length > 100) { heartArr[0].remove() } }, 100); Content.style = "opacity:1;margin-top:16vh"; const swals = Swal.mixin({ allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80, });
 
     document.getElementById("kadoIn").onclick = function () { if (fungsiAwal == 0) { audio.play(); fungsiAwal = 1; kadoIn.style = "transition:all .8s ease;transform:scale(10);opacity:0"; wallpaper.style = "transform: scale(1.5);"; ket.style = "display:none"; setTimeout(initengahan, 300); setTimeout(inipesan, 500) } }
+
+    audio.addEventListener('ended', function () {
+      // Memulai ulang audio
+      audio.currentTime = 0; // Mengatur waktu pemutaran ke awal
+      audio.play();
+    });
 
     async function inipesan() {
       var { value: nama } = await swals.fire({
@@ -129,8 +141,6 @@
     var tomnegatif = 'Engga';
 
     async function menuju() { pesanwhatsapp = "Makasii udah ngucapin " + nama + " ultah ><"; await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success'); window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp; }
-
-    document.getElementById('linkmp3').play();
   </script>
   <script src="https://malasid.github.io/html/hbd.js"></script>
   <!-- Sampai Sini -->
